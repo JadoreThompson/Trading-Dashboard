@@ -41,11 +41,11 @@
     <div class="top-row">
         <div class="card simstat-card">
             <h2>Today's Growth</h2>
-            <span>+ $680</span>
+            <span>{{ ttl_profit }}</span>
         </div>
         <div class="card simstat-card">
             <h2>7d Growth</h2>
-            <span> + $4000</span>
+            <span>{{ w_profit }}</span>
         </div>
     </div>
 
@@ -56,7 +56,7 @@
         <div class="card stat-card" style="width: 40%;padding: 10px; display: flex;flex-direction: column;">
             <div class="stat" style="display: flex;flex-direction: row;justify-content: space-between;">
                 <div class="stat-title"><h3>Currency</h3></div>
-                <div class="stat-value"><h3>USD</h3></div>
+                <div class="stat-value"><h3>{{ currency }}</h3></div>
             </div>
         </div>
     </div>
@@ -127,6 +127,8 @@
 </div>
 
 <script>
+
+    // placeholder values for growth chart
     var ctx = document.getElementById('myChart').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
@@ -148,6 +150,8 @@
         options: {}
     });
 
+
+    // Placeholder values for pie chart
     var ctx = document.getElementById('pieChart').getContext('2d');
     var chart = new Chart(ctx, {
         // The type of chart we want to create
